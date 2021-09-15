@@ -17,6 +17,7 @@ namespace Warm_up_loops_tests
             var ui = new UserInterface_mock();
             var answer = 8;
             var guess = 9;
+
             var expected = GuessResponse.Higher;
             ui.AddToNumberQueue(guess);
             var sut = new GameGuessNumber(answer, ui);
@@ -31,7 +32,19 @@ namespace Warm_up_loops_tests
         [TestMethod]
         public void Guess_LowerThanAnswer_ReturnsResponseLower()
         {
+            var ui = new UserInterface_mock();
+            var answer = 8;
+            var guess = 2;
 
+            var expected = GuessResponse.Lower;
+            ui.AddToNumberQueue(guess);
+            var sut = new GameGuessNumber(answer, ui);
+
+            //act
+            var result = sut.Guess();
+
+            //assert
+            Assert.AreEqual(expected, result);
         }
 
         [TestMethod]
