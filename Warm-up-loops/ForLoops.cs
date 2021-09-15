@@ -29,7 +29,13 @@ namespace Warm_up_loops
         /// <returns>Returns highest number in array.  If array is empty, returns null</returns>
         public int? GetHighest(int[] arr)
         {
-            throw new NotImplementedException();
+            if (arr.Length == 0) return null;
+            int highest = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] > highest) highest = arr[i];
+            }
+            return highest;
 
         }
 
@@ -40,7 +46,21 @@ namespace Warm_up_loops
         /// <returns>Returns highest number in array.  If there are no numbers provided, returns null</returns>
         public int? GetHighest(int[][] arr)
         {
-            throw new NotImplementedException();
+            
+            int? highest = null;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr[i].Length; j++)
+                {
+                    if (arr[i].Length > 0)
+                    {
+                        if (highest == null) highest = arr[i][j];
+                        if (arr[i][j] > highest) highest = arr[i][j];
+                    }
+                }
+            }
+            return highest;
         }
     }
 }
