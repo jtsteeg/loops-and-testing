@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Warm_up_loops
 {
-    class ForLoop
+    public class ForLoop
     {
         /// <summary>
         /// Return lowest number in array
@@ -13,8 +13,13 @@ namespace Warm_up_loops
         /// <returns>Returns lowest number in array.  If array is empty, returns null</returns>
         public int? GetLowest(int[] arr)
         {
-           throw new NotImplementedException();
-
+            if (arr.Length == 0) return null;
+            int lowest = arr[0];
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if (arr[i] < lowest) lowest = arr[i];
+            }
+            return lowest;
         }
 
         /// <summary>

@@ -1,12 +1,12 @@
 using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-
+using Warm_up_loops;
 namespace Warm_up_loops_tests
 {
     [TestClass]
     public class ForLoops_tests
     {
-        
+        [TestMethod]
         public void GetLowest_ArrayWithMinValue_ReturnsLowestNumber()
         {
             //Arrange
