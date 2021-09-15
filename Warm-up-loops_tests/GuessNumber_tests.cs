@@ -48,8 +48,22 @@ namespace Warm_up_loops_tests
         }
 
         [TestMethod]
-        public void Guess_EqualToAnswer_ReturnsResponseHigher()
+        public void Guess_EqualToAnswer_ReturnsResponseCorrect()
         {
+            //Arrange
+            var ui = new UserInterface_mock();
+            var answer = 8;
+            var guess = 8;
+
+            var expected = GuessResponse.Correct;
+            ui.AddToNumberQueue(guess);
+            var sut = new GameGuessNumber(answer, ui);
+
+            //Act
+            var result = sut.Guess();
+
+            //Assert
+            Assert.AreEqual(expected, result);
 
         }
     }
